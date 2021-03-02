@@ -23,7 +23,7 @@ class PolyTreeNode
     def parent=(another_node)
         old_parent = @parent
         if old_parent != nil
-            old_parent.children.each_with_index do |node,i|  #remove self node from parent
+            old_parent.children.each_with_index do |node,i|  #remove self node from old parent
                 old_parent.children = old_parent.children.take(i) + old_parent.children.drop(i+1) if node == self
             end
         end
